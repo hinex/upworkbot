@@ -1,0 +1,65 @@
+{
+  "name": "telegrambot-devall",
+  "version": "0.7.0",
+  "description": "Telegram bot for devall chats.",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_PATH=lib NODE_ENV=production node index.js | bunyan",
+    "dev": "NODE_PATH=src NODE_ENV=development nodemon --exec babel-node index.js | bunyan",
+    "prepublish": "npm run build",
+    "build": "npm run clean-lib && npm run compile && npm run copy-bot-templates",
+    "clean-lib": "rm -r ./lib/*",
+    "compile": "babel -d lib/ src/",
+    "copy-bot-templates": "cp -R ./src/bot/templates/ ./lib/bot/templates",
+    "test": "eslint .; exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/immuzov/telegrambot-devall.git"
+  },
+  "keywords": [
+    "telegram",
+    "devall",
+    "bot"
+  ],
+  "author": {
+    "name": "Aleksey Immuzov",
+    "email": "immuzov@gmail.com",
+    "url": ""
+  },
+  "contributors": [
+    {
+      "name": "Roman Hinex",
+      "email": "roma.hinex@gmail.com",
+      "url": ""
+    }
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://bitbucket.org/immuzov/telegrambot-devall#readme",
+  "dependencies": {
+    "bluebird": "^3.3.3",
+    "bottlejs": "^1.2.3",
+    "bunyan": "^1.7.1",
+    "cheerio": "^0.20.0",
+    "config": "^1.19.0",
+    "ejs": "^2.4.1",
+    "iconv": "^2.1.11",
+    "kerberos": "0.0.18",
+    "lodash": "^4.6.1",
+    "mongodb": "^2.0.55",
+    "mongoskin": "^2.0.3",
+    "node-telegram-bot-api": "^0.20.1",
+    "pretty-error": "^2.0.0",
+    "request": "^2.69.0",
+    "request-promise": "^2.0.1",
+    "xml2js": "^0.4.16"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "eslint": "^2.3.0",
+    "eslint-config-airbnb": "^6.0.2",
+    "nodemon": "^1.9.1"
+  }
+}

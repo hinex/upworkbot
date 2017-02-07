@@ -1,0 +1,37 @@
+module.exports = {
+  bot: {
+    token: 'YOUR_TOKEN_HERE',
+
+    options: {
+      polling: true
+    },
+
+    currency: {
+      uri: 'http://www.cbr.ru/scripts/XML_daily.asp',
+      list: [
+        'R01235',
+        'R01239'
+      ]
+    },
+
+    upwork: {
+      statusUrl: 'https://status.upwork.com/'
+    },
+
+    availableChats: [
+
+    ]
+  },
+
+  db: {
+    url: 'YOUR_MONGO_URL',
+    options: {
+      native_parser: true
+    }
+  },
+
+  logger: {
+    name: 'app',
+    level: 'trace'
+  }
+}
