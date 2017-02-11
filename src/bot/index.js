@@ -10,7 +10,7 @@ import TelegramBot from 'node-telegram-bot-api'
 import utils from './utils'
 
 /**
- * Класс для работы с телеграмом
+ * Класс для работы с телеграммом
  */
 export default class Bot {
   /**
